@@ -1,4 +1,4 @@
-# Benthic Habitat Segmentation
+# Benthic Habitat Segmentation using Pre-Trained Encoder UNet on 8-Band WorldView-3 Imagery
 
 Semantic segmentation of benthic habitats from 8-band WorldView-3 satellite imagery. A UNet built with [`segmentation_models_pytorch`](https://github.com/qubvel/segmentation_models_pytorch), adapted from 3-channel ImageNet pretraining to 8-channel multispectral input, trained with a hybrid Dice + weighted Cross-Entropy loss, and evaluated with per-class metrics and full confusion matrices.
 
