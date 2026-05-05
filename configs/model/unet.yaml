@@ -1,0 +1,4 @@
+encoder_name: resnet50
+encoder_weights: imagenet
+in_channels: 8
+num_classes: 7

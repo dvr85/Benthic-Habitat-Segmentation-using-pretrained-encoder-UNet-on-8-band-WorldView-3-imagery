@@ -1,0 +1,19 @@
+{
+  "run_name": "smp_unet",
+  "epochs_run": 25,
+  "best_val_macro_dice": 0.634293448067826,
+  "best_checkpoint": "checkpoints/smp_unet_best.pth",
+  "train_stems": [
+    "WV02052023",
+    "WV02202022",
+    "WV220101215",
+    "WV220140205",
+    "WV220171020",
+    "WV320141230",
+    "WV_01132022"
+  ],
+  "val_stems": [
+    "WV220130115",
+    "WV220230219"
+  ]
+}

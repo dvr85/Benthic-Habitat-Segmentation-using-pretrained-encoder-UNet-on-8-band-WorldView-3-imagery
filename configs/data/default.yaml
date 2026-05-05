@@ -1,0 +1,15 @@
+# Patch-based dataset config.
+# During training, Benthic Dataset emits `patches_per_epoch` random crops.
+# During validation, it emits a deterministic non-overlapping grid of crops from the held-out images.
+
+images_dir: data/raw_labeled_data/images
+annotations_dir: data/raw_labeled_data/annotations
+band_stats_path: configs/band_stats.json
+
+patch_size: 256
+patches_per_epoch: 400      # random crops drawn per training epoch
+val_split: 0.2              # fraction of images held out by stem (deterministic)
+augment: true               # H-flip, V-flip, 90/180/270 rotation (paired with mask)
+
+# Tile-and-stitch params for full-resolution inference (evaluate.py + demo).
+inference_stride: 128       # 50% overlap between adjacent patches; lower = sharper but slower

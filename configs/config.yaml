@@ -1,0 +1,26 @@
+# Main Config File which composes from groups under configs/{data,model,training,loss}.
+# FYI: `python -m src.train training.epochs=10 model.encoder_name=resnet34`
+defaults:
+  - data: default
+  - model: unet
+  - training: default
+  - loss: hybrid
+  - _self_
+
+run_name: smp_unet
+seed: 42
+
+# Stable artifact locations
+checkpoint_dir: checkpoints
+results_dir: results
+
+# Evaluation config used by `python -m src.evaluate`.
+eval:
+  checkpoint: ${checkpoint_dir}/${run_name}_best.pth
+  test_set: both    # one of: "Agana", "Manell", "both"
+
+hydra:
+  run:
+    dir: outputs/${now:%Y-%m-%d_%H-%M-%S}_${run_name}
+  job:
+    chdir: false    # keep working dir = project root so relative paths still work
